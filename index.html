@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>denginyokbragi x und3rg0und Hacked</title>
     <meta name="title" content="denginyokbragi x und3rg0und Hacked">
     <meta name="description" content="İslamdan Başka Kurtuluş Yolu Yoktur. HER ŞEY KAYDEDİLİYOR.">
-    
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://denginyokbragi-x-und3rg0und.vercel.app/">
     <meta property="og:title" content="denginyokbragi x und3rg0und Hacked">
     <meta property="og:description" content="İslamdan Başka Kurtuluş Yolu Yoktur.">
     <meta property="og:image" content="https://i.pinimg.com/474x/45/4e/1b/454e1b5bb157094c2584fd8235e70007.jpg">
-
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="denginyokbragi x und3rg0und Hacked">
     <meta property="twitter:image" content="https://i.pinimg.com/474x/45/4e/1b/454e1b5bb157094c2584fd8235e70007.jpg">
-
     <style>
         body {
             background-color: #000000;
@@ -32,6 +28,7 @@
             text-align: center;
             height: 100vh;
             overflow: hidden;
+            cursor: pointer;
         }
         .flag-img {
             width: 400px;
@@ -94,54 +91,93 @@
             margin: 10px 0;
             font-size: 14px;
         }
+        .hidden-audio {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
     </style>
 </head>
 <body>
-
     <img src="https://i.pinimg.com/474x/45/4e/1b/454e1b5bb157094c2584fd8235e70007.jpg" alt="Flag" class="flag-img">
-
     <h1>Hacked By ./denginyokbragi ./und3rg0und</h1>
-
     <div class="slogan">İslamdan Başka Kurtuluş Yolu Yoktur</div>
-
     <div class="warning">HER ŞEY KAYDEDİLİYOR</div>
-
     <div class="verses">
         <div class="verse">
             <div class="arabic">فَسَوْفَ يَعْلَمُونَ</div>
             <div class="turkish">"YAKINDA BİLECEKLER." (Zariyat, 60)</div>
         </div>
-        
         <div class="verse">
             <div class="arabic">وَبَدَا لَهُمْ سَيِّئَاتُ مَا كَسَبُوا</div>
             <div class="turkish">"İŞLEDİKLERİ KÖTÜLÜKLER KARŞILARINA ÇIKTI." (Zümer, 48)</div>
         </div>
-        
         <div class="verse">
             <div class="arabic">إِنَّ اللَّهَ كَانَ عَلَيْكُمْ رَقِيبًا</div>
             <div class="turkish">"ŞÜPHESİZ ALLAH, SİZİN ÜZERİNİZDE GÖZETLEYİCİDİR." (Nisa, 1)</div>
         </div>
-        
         <div class="verse">
             <div class="arabic">لَتُسْأَلُنَّ عَمَّا كُنْتُمْ تَعْمَلُونَ</div>
             <div class="turkish">"YAPTIKLARINIZDAN MUTLAKA SORUMLU TUTULACAKSINIZ." (Nahl, 93)</div>
         </div>
-        
         <div class="verse">
             <div class="arabic">يَوْمَ لَا يَنْفَعُ مَالٌ وَلَا بَنُونَ</div>
             <div class="turkish">"MALIN VE EVLADIN FAYDA VERMEDİĞİ GÜN." (Şuara, 88)</div>
         </div>
     </div>
-
     <div class="warning">KAÇIŞ YOK. HESAP GÜNÜ YAKIN</div>
-
     <div class="discord-link-box">
         https://discord.gg/5QdyV9B69y
     </div>
-
     <div class="copyright">
         Copyright © Her Hakkı Saklıdır.
     </div>
-
+    <audio id="bgMusic" loop class="hidden-audio" preload="auto">
+        <source src="https://files.catbox.moe/n2myo1.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        const audio = document.getElementById('bgMusic');
+        audio.volume = 1.0;
+        let started = false;
+        
+        const startAudio = () => {
+            if (started) return;
+            audio.play().then(() => {
+                started = true;
+                document.body.style.cursor = 'default';
+            }).catch(e => {});
+        };
+        
+        const startOnInteraction = () => {
+            startAudio();
+            document.removeEventListener('click', startOnInteraction);
+            document.removeEventListener('touchstart', startOnInteraction);
+            document.removeEventListener('keydown', startOnInteraction);
+            document.removeEventListener('mousemove', startOnInteraction);
+        };
+        
+        document.addEventListener('click', startOnInteraction);
+        document.addEventListener('touchstart', startOnInteraction);
+        document.addEventListener('keydown', startOnInteraction);
+        document.addEventListener('mousemove', startOnInteraction);
+        
+        window.addEventListener('load', () => {
+            setTimeout(startAudio, 100);
+            setTimeout(startAudio, 1000);
+            setTimeout(startAudio, 2000);
+        });
+        
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && !started) {
+                setTimeout(startAudio, 100);
+            }
+        });
+        
+        const events = ['click', 'touchstart', 'keydown', 'mousedown', 'mouseup', 'wheel', 'scroll'];
+        events.forEach(event => {
+            document.addEventListener(event, startAudio, { once: true });
+        });
+    </script>
 </body>
 </html>
