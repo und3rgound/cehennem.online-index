@@ -7,27 +7,28 @@
     <style>
         .header-msg {
             position: absolute;
-            top: 20px;
+            top: 25px;
             width: 100%;
             z-index: 9999;
             text-align: center;
         }
-        /* İsteğin üzerine büyütülen ve vurgulanan yazı */
+        /* THT Satırı - Maksimum Boyut ve Vurgu */
         .tht-alay {
-            font-size: 28px; /* Yazı boyutu büyütüldü */
+            font-size: 36px;
             color: #ffff00;
-            font-weight: bold;
+            font-weight: 900;
             font-style: italic;
-            text-shadow: 0 0 20px #ff0000, 0 0 10px #ffff00;
+            text-shadow: 0 0 25px #ff0000, 0 0 10px #ffff00;
             display: block;
             margin-top: 5px;
-            animation: pulse 1.5s infinite;
+            animation: pulse 1.2s infinite;
+            letter-spacing: 1px;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); text-shadow: 0 0 40px #ff0000; }
+            100% { transform: scale(1); }
         }
 
         * {
@@ -95,7 +96,7 @@
 
     <div class="warning">KAÇIŞ YOK. HESAP GÜNÜ YAKIN</div>
     <div class="discord-link-box">
-        <a href="https://discord.gg/5QdyV9B69y" target="_blank">https://discord.gg/5QdyV9B69y</a>
+        <a href="https://discord.gg/XQ5QdYzn8d" target="_blank">https://discord.gg/XQ5QdYzn8d</a>
     </div>
 
     <div class="copyright">Copyright © Her Hakkı Saklıdır.</div>
@@ -110,20 +111,19 @@
 
         function startAll() {
             if (!played) {
-                audio.volume = 1.0; // Sesin açık olduğundan emin ol
+                audio.volume = 1.0; 
                 audio.play().then(() => {
                     played = true;
-                    console.log("Müzik başladı");
-                }).catch(e => console.log("Etkileşim bekleniyor..."));
+                }).catch(e => {
+                    console.log("Ses için dokunma bekleniyor.");
+                });
             }
         }
 
-        // Tüm etkileşimlere dinleyici ekle
-        ['click', 'touchstart', 'keydown', 'scroll'].forEach(event => {
+        ['click', 'touchstart', 'keydown', 'mousedown'].forEach(event => {
             window.addEventListener(event, startAll, { once: true });
         });
 
-        // Sayfa kaymasını engelle
         document.addEventListener('touchmove', function(e) { e.preventDefault(); }, { passive: false });
         window.onscroll = function() { window.scrollTo(0, 0); };
     </script>
